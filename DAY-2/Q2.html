@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <style>
+        .ui-widget-header,
+        .ui-button,
+        .ui-state-default {
+            background-color: gray;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style=" height: 100px; width: 100px; background-color: rgb(184, 184, 120); padding : 20px;"><br>
+        <p><b>THE DIALOG</b></p>
+        <button id="btn">click me!</button>
+    </div>
+
+    <div id="dialog1">Are you sure you want to do this?</div>
+    <script>
+        $(function () {
+            $('#dialog1').dialog({ 
+                autoOpen: false,
+                buttons: {
+                    'Yes I do!': function () 
+                    { $(this).dialog("close");
+                 },
+                    'NO': function () 
+                    {$(this).dialog("close");
+                 }
+                },
+                title: "ATTENTION!"
+            });
+            $('#btn').click(function () {
+                $('#dialog1').dialog("open");
+            })
+        });
+    </script>
+</body>
+
+</html>
